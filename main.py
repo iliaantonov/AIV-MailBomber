@@ -65,7 +65,7 @@ message = 'From: {}\nTo: {}\n\n{}'.format(email, dest_email, email_text)
 # Отправка сообщений
 while i < int(amount):
     if random:
-        email_text = sent_arr[rand.randint(0, len(sent_arr))]
+        email_text = sent_arr[rand.randint(0, len(sent_arr)-1)]
         message = 'From: {}\nTo: {}\n\n{}'.format(email, dest_email, email_text)
     server.sendmail(email, dest_email, message)
     print(Fore.GREEN + '[+] Successfully sent to the: ', Fore.RED + dest_email)
